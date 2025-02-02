@@ -1,0 +1,49 @@
+# 🚀 Project Setup & Deployment:
+
+1️⃣ Step: Set Up S3 for Static Website Hosting
+
+Create an S3 bucket and enable static website hosting.
+
+Upload frontend files (HTML, CSS, JavaScript).
+
+Configure Bucket Policy to allow public access.
+
+2️⃣ Step: Deploy API Gateway & Lambda Backend
+
+Create an API Gateway to manage API requests.
+
+Deploy AWS Lambda functions to handle business logic.
+
+Connect API Gateway to Lambda functions.
+
+Enable CORS settings to allow frontend communication.
+
+3️⃣ Step: Configure Authentication (Amazon Cognito)
+
+Set up User Pool in Amazon Cognito for authentication.
+
+Integrate Cognito with API Gateway for secure API access.
+
+Implement user sign-up, login, and authorization.
+
+4️⃣ Step: Store & Retrieve Data Using DynamoDB
+
+Create a DynamoDB table to store user data.
+
+Configure Lambda functions to interact with DynamoDB.
+
+Implement CRUD operations (Create, Read, Update, Delete).
+
+5️⃣ Step: Automate Deployment Using AWS CloudFormation
+
+Use CloudFormation templates to automate infrastructure setup.
+
+Deploy API Gateway, Lambda, Cognito, DynamoDB, and S3 using IaC.
+
+6️⃣ Step: Testing & Monitoring
+
+Access the S3 static website URL to test the application.
+
+Monitor API Gateway & Lambda logs in Amazon CloudWatch.
+
+Debug and optimize based on CloudWatch insights.
