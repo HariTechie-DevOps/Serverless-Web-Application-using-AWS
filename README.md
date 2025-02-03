@@ -19,6 +19,9 @@ Infrastructure as Code (IaC) using AWS CloudFormation
 
 # 📸 Architecture Diagram:
 
+![Serverless web application drawio](https://github.com/user-attachments/assets/3959056a-1a7d-440a-8e19-55fecc8f81d5)
+
+
 # 📌 Project Outputs:
 
 ✅ A fully serverless web application hosted on AWS.
