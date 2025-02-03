@@ -1,49 +1,43 @@
 # 🚀 Project Setup & Deployment:
 
-1️⃣ Step: Set Up S3 for Static Website Hosting
+1️⃣ Set Up the Static Website on S3
+- Create an S3 Bucket:
+  - Name the bucket (e.g., `my-serverless-webapp`) and enable static website hosting in the bucket properties.
+- Upload Website Files:
+  - Upload your HTML, CSS, and JavaScript files to the bucket.
+- Configure Bucket Policy: 
+  - Update the bucket policy to allow public read access so that CloudFront can retrieve the content.
 
-Create an S3 bucket and enable static website hosting.
+2️⃣ Configure CloudFront
+- Create a CloudFront Distribution: 
+  - Set your S3 bucket as the origin.
+  - Configure caching settings as needed.
+  - (Optional) Enable HTTPS by associating an SSL/TLS certificate.
+  
+3️⃣ Set Up AWS Route53
+- Register or Use an Existing Domain:
+  - In Route53, configure a hosted zone for your domain.
+- Create DNS Records:  
+  - Set up an A or CNAME record pointing to your CloudFront distribution. This directs your custom domain traffic to your application.
 
-Upload frontend files (HTML, CSS, JavaScript).
+4️⃣ Develop & Deploy AWS Lambda Functions
+- Write Your Lambda Code:
+  - Create functions (using Node.js, Python, etc.) that implement your backend logic.
+- Configure API Gateway (Optional): 
+  - If your Lambda functions are to be invoked via REST API calls, set up an API Gateway to route HTTP requests to Lambda.
+- Deploy Your Functions:
+  - Use the AWS Lambda console, CLI, or CI/CD pipelines to deploy your code.
 
-Configure Bucket Policy to allow public access.
-
-2️⃣ Step: Deploy API Gateway & Lambda Backend
-
-Create an API Gateway to manage API requests.
-
-Deploy AWS Lambda functions to handle business logic.
-
-Connect API Gateway to Lambda functions.
-
-Enable CORS settings to allow frontend communication.
-
-3️⃣ Step: Configure Authentication (Amazon Cognito)
-
-Set up User Pool in Amazon Cognito for authentication.
-
-Integrate Cognito with API Gateway for secure API access.
-
-Implement user sign-up, login, and authorization.
-
-4️⃣ Step: Store & Retrieve Data Using DynamoDB
-
-Create a DynamoDB table to store user data.
-
-Configure Lambda functions to interact with DynamoDB.
-
-Implement CRUD operations (Create, Read, Update, Delete).
-
-5️⃣ Step: Automate Deployment Using AWS CloudFormation
-
-Use CloudFormation templates to automate infrastructure setup.
-
-Deploy API Gateway, Lambda, Cognito, DynamoDB, and S3 using IaC.
-
-6️⃣ Step: Testing & Monitoring
-
-Access the S3 static website URL to test the application.
-
-Monitor API Gateway & Lambda logs in Amazon CloudWatch.
-
-Debug and optimize based on CloudWatch insights.
+5️⃣ Set Up Amazon DynamoDB
+- Create a DynamoDB Table: 
+  - Define a table with the required primary key (e.g., `UserID` or `ItemID`).
+- Integrate with Lambda: 
+  - Modify your Lambda functions to perform CRUD operations (Create, Read, Update, Delete) on DynamoDB.
+  
+6️⃣ Testing & Monitoring
+- Test the Website:
+  - Access your custom domain to verify that the static content is served via CloudFront.
+- Test the API: 
+  - Invoke your Lambda functions (directly or through API Gateway) and ensure that they interact with DynamoDB correctly.
+- Monitor with CloudWatch: 
+  - Use CloudWatch logs to review Lambda function performance and diagnose issues.
